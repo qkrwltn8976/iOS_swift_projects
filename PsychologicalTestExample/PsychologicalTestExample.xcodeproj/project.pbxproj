@@ -16,6 +16,9 @@
 		66EB2FFA22A6DCB4001DEED7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66EB2FF922A6DCB4001DEED7 /* Assets.xcassets */; };
 		66EB2FFD22A6DCB4001DEED7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66EB2FFB22A6DCB4001DEED7 /* LaunchScreen.storyboard */; };
 		66EB300822A6DCB5001DEED7 /* PsychologicalTestExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EB300722A6DCB5001DEED7 /* PsychologicalTestExampleTests.swift */; };
+		66EB301322A6DFB0001DEED7 /* CardDisplayScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 66EB301222A6DFB0001DEED7 /* CardDisplayScene.sks */; };
+		66EB301522A6DFCB001DEED7 /* CardDisplayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EB301422A6DFCB001DEED7 /* CardDisplayScene.swift */; };
+		66EB301722A6E16A001DEED7 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EB301622A6E16A001DEED7 /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,9 @@
 		66EB300322A6DCB5001DEED7 /* PsychologicalTestExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PsychologicalTestExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		66EB300722A6DCB5001DEED7 /* PsychologicalTestExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PsychologicalTestExampleTests.swift; sourceTree = "<group>"; };
 		66EB300922A6DCB5001DEED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66EB301222A6DFB0001DEED7 /* CardDisplayScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CardDisplayScene.sks; sourceTree = "<group>"; };
+		66EB301422A6DFCB001DEED7 /* CardDisplayScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDisplayScene.swift; sourceTree = "<group>"; };
+		66EB301622A6E16A001DEED7 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +96,11 @@
 				66EB2FF422A6DCAF001DEED7 /* GameViewController.swift */,
 				66EB2FF622A6DCAF001DEED7 /* Main.storyboard */,
 				66EB2FF922A6DCB4001DEED7 /* Assets.xcassets */,
+				66EB301622A6E16A001DEED7 /* Card.swift */,
 				66EB2FFB22A6DCB4001DEED7 /* LaunchScreen.storyboard */,
 				66EB2FFE22A6DCB4001DEED7 /* Info.plist */,
+				66EB301222A6DFB0001DEED7 /* CardDisplayScene.sks */,
+				66EB301422A6DFCB001DEED7 /* CardDisplayScene.swift */,
 			);
 			path = PsychologicalTestExample;
 			sourceTree = "<group>";
@@ -189,6 +198,7 @@
 				66EB2FF822A6DCAF001DEED7 /* Main.storyboard in Resources */,
 				66EB2FEF22A6DCAF001DEED7 /* GameScene.sks in Resources */,
 				66EB2FFA22A6DCB4001DEED7 /* Assets.xcassets in Resources */,
+				66EB301322A6DFB0001DEED7 /* CardDisplayScene.sks in Resources */,
 				66EB2FFD22A6DCB4001DEED7 /* LaunchScreen.storyboard in Resources */,
 				66EB2FF122A6DCAF001DEED7 /* Actions.sks in Resources */,
 			);
@@ -210,7 +220,9 @@
 			files = (
 				66EB2FF322A6DCAF001DEED7 /* GameScene.swift in Sources */,
 				66EB2FF522A6DCAF001DEED7 /* GameViewController.swift in Sources */,
+				66EB301722A6E16A001DEED7 /* Card.swift in Sources */,
 				66EB2FED22A6DCAF001DEED7 /* AppDelegate.swift in Sources */,
+				66EB301522A6DFCB001DEED7 /* CardDisplayScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +385,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3V828TVJJT;
 				INFOPLIST_FILE = PsychologicalTestExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -390,6 +403,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3V828TVJJT;
 				INFOPLIST_FILE = PsychologicalTestExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

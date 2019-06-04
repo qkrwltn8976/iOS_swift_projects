@@ -21,6 +21,9 @@ class GameScene: SKScene {
         if let label = self.label {
             label.alpha = 0.0
             label.run(SKAction.fadeIn(withDuration: 2.0))
+            label.text = "너는 나에게 어떤 의미일까?"
+            label.fontName = "AppleSDGothicNeo-Medium"
+            label.fontSize = 45
         }
         
         // Create shape node to use during mouse interaction
@@ -64,7 +67,16 @@ class GameScene: SKScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let label = self.label {
-            label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
+            let fadeAction = SKAction.fadeOut(withDuration: 1.0)
+            
+            label.run(fadeAction, completion: {
+                let sceneTransition = SKTransition.push(
+                    with: SKTransitionDirection.left, duration: 1.0)
+                let cardScene = CardDisplayScene()
+                cardScene.size = (self.view?.bounds.size)!
+                self.view?.presentScene(
+                    cardScene, transition: sceneTransition)
+            })
         }
         
         for t in touches { self.touchDown(atPoint: t.location(in: self)) }
