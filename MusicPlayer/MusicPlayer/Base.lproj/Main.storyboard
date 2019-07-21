@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,15 +15,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MusicPlayer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="WiI-VZ-qGE">
-                                <rect key="frame" x="148" y="531" width="118" height="30"/>
-                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bwn-pC-Hfd">
-                                <rect key="frame" x="113.5" y="211" width="187" height="189"/>
+                                <rect key="frame" x="94" y="80" width="187" height="189"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="189" id="Tmb-62-Zmb"/>
                                     <constraint firstAttribute="width" constant="187" id="hL9-n3-fWw"/>
@@ -31,20 +27,36 @@
                                 <state key="normal" image="button_play"/>
                                 <state key="disabled" image="button_play"/>
                                 <state key="selected" image="button_pause"/>
+                                <connections>
+                                    <action selector="playBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bvn-Ia-Bow"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBO-oS-MhD">
-                                <rect key="frame" x="186" y="418" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBO-oS-MhD">
+                                <rect key="frame" x="0.0" y="299" width="375" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="WiI-VZ-qGE">
+                                <rect key="frame" x="14" y="350" width="347" height="31"/>
+                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="progressSliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="B9m-D9-VR3"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="CBO-oS-MhD" firstAttribute="top" secondItem="Bwn-pC-Hfd" secondAttribute="bottom" constant="30" id="18z-PJ-MSB"/>
                             <constraint firstItem="CBO-oS-MhD" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="52N-eb-q20"/>
                             <constraint firstItem="WiI-VZ-qGE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="8a2-kW-med"/>
+                            <constraint firstItem="WiI-VZ-qGE" firstAttribute="top" secondItem="CBO-oS-MhD" secondAttribute="bottom" constant="30" id="LfC-NJ-XkB"/>
                             <constraint firstItem="Bwn-pC-Hfd" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Ofw-Iu-FVu"/>
-                            <constraint firstItem="Bwn-pC-Hfd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="167" id="hfz-Tw-hrP"/>
+                            <constraint firstItem="CBO-oS-MhD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SOP-Wf-42q"/>
+                            <constraint firstItem="WiI-VZ-qGE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="W2W-R3-WtU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WiI-VZ-qGE" secondAttribute="trailing" constant="16" id="bGv-Hr-h2N"/>
+                            <constraint firstItem="Bwn-pC-Hfd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="hfz-Tw-hrP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CBO-oS-MhD" secondAttribute="trailing" id="j7Y-TQ-Eig"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
