@@ -35,13 +35,13 @@ class ViewController: UIViewController {
             self.player?.pause()
             self.stopTimer()
         }
-    }
+    } //플레이버튼을 클릭했을 때 이벤트 처리 함수
     
     @IBAction func progressSliderAction(_ sender: UISlider) {
         self.updateTimeLabel(time: TimeInterval(sender.value))
         if sender.isTracking { return }
         self.player.currentTime = TimeInterval(sender.value)
-    }
+    } //슬라이더가 움직일 때마다 타임레이블을 업데이트하고 플레이어 상태를 조절하는 함수
     
 }
 
@@ -61,7 +61,7 @@ extension ViewController: AVAudioPlayerDelegate {
         progressSlider.maximumValue = Float(self.player.duration)
         progressSlider.minimumValue = 0
         progressSlider.value = Float(self.player.currentTime)
-    }
+    } //음악 플레이어를 초기화 설정하는 함수
     
     func updateTimeLabel(time: TimeInterval) {
         
@@ -72,7 +72,7 @@ extension ViewController: AVAudioPlayerDelegate {
         let timeText: String = String(format: "%02ld:%02ld:%02ld", minute, second, milisecond)
 
         self.timeLabel.text = timeText
-    }
+    } //타임레이블을 시간 형식에 맞게 출력하고 업데이트하는 함수
     
     func startTimer() {
         self.timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { [unowned self] (timer: Timer) in
@@ -86,12 +86,12 @@ extension ViewController: AVAudioPlayerDelegate {
         })
         
         self.timer.fire()
-    }
+    } //타이머를 시작하는 함수
     
     func stopTimer() {
         self.timer.invalidate()
         self.timer = nil
-    }
+    } //타이머를 멈추는 함수
     
     func playBtnCustom() {
         let button: UIButton = UIButton(type: UIButton.ButtonType.custom)
@@ -102,12 +102,12 @@ extension ViewController: AVAudioPlayerDelegate {
         button.setImage(UIImage(named: "button_pause"), for: UIControl.State.selected)
         button.addTarget(self, action: #selector(self.playBtnAction(_:)), for: UIControl.Event.touchUpInside)
         self.playBtn = button
-    }
+    } //플레이버튼의 아이콘을 커스텀하고 동작을 설정하는 함수
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         self.playBtn.isSelected = false
         self.progressSlider.value = 0
         self.updateTimeLabel(time: 0)
         self.stopTimer()
-    }
+    } //음악 재생이 종료되었을 때 다시 초기화하는 함수
 }
