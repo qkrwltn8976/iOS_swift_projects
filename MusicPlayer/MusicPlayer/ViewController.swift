@@ -24,13 +24,16 @@ class ViewController: UIViewController {
     }
 
     
-    @IBAction func playBtnAction(_ sender: Any) {
-        if !playBtn.isSelected {
-            player.play()
-            startTimer()
+    @IBAction func playBtnAction(_ sender: UIButton) {
+        
+        sender.isSelected = !sender.isSelected
+        
+        if sender.isSelected {
+            self.player?.play()
+            self.startTimer()
         } else {
-            player.pause()
-            stopTimer()
+            self.player?.pause()
+            self.stopTimer()
         }
     }
     
@@ -89,5 +92,22 @@ extension ViewController: AVAudioPlayerDelegate {
         self.timer.invalidate()
         self.timer = nil
     }
+    
+    func playBtnCustom() {
+        let button: UIButton = UIButton(type: UIButton.ButtonType.custom)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.view.addSubview(button)
+        button.setImage(UIImage(named: "button_play"), for: UIControl.State.normal)
+        button.setImage(UIImage(named: "button_pause"), for: UIControl.State.selected)
+        button.addTarget(self, action: #selector(self.playBtnAction(_:)), for: UIControl.Event.touchUpInside)
+        self.playBtn = button
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        self.playBtn.isSelected = false
+        self.progressSlider.value = 0
+        self.updateTimeLabel(time: 0)
+        self.stopTimer()
+    }
 }
-
